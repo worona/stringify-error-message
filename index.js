@@ -3,11 +3,11 @@
 module.exports = function stringifyError(value) {
   if (typeof value === 'object') {
 
-    // Meteor Error
-    if (value.errorType === 'Meteor.Error')
+    // Meteor Error or alike
+    if (value.reason)
       return value.reason;
 
-    // Default Javascript
+    // Default Javascript Error
     if (value instanceof Error)
       return value.message;
 
