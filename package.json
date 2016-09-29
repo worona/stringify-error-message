@@ -1,0 +1,26 @@
+{
+  "name": "stringify-error-message",
+  "version": "1.0.0",
+  "description": "Convert different Error Objects to a simple string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/worona/stringify-error-message.git"
+  },
+  "keywords": [
+    "stringify",
+    "error",
+    "message",
+    "Meteor",
+    "standard"
+  ],
+  "author": "Abel 'Akronix' Serrano Juste",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/worona/stringify-error-message/issues"
+  },
+  "homepage": "https://github.com/worona/stringify-error-message#readme"
+}
