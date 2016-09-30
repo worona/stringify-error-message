@@ -22,7 +22,7 @@ module.exports = function stringifyError(value) {
 	}
 
   // simple string
-  else if (typeof value === string)
+  else if (typeof value === 'string')
     return value;
 
 	// function
