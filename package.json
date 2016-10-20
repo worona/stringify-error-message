@@ -1,6 +1,6 @@
 {
   "name": "stringify-error-message",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Convert different Error Objects to a simple string",
   "main": "index.js",
   "scripts": {
