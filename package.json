@@ -4,7 +4,7 @@
   "description": "Convert different Error Objects to a simple string",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/worona/stringify-error-message/issues"
   },
-  "homepage": "https://github.com/worona/stringify-error-message#readme"
+  "homepage": "https://github.com/worona/stringify-error-message#readme",
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
 }

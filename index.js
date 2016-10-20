@@ -1,10 +1,13 @@
 'use strict';
 
+
 module.exports = function stringifyError(value) {
+  var NOT_STRINGIFABLE = "An error impossible to stringify has happened";
+
   if (typeof value === 'object') {
 
     // Meteor Error or alike
-    if (value.error)
+    if (typeof value.error === 'string')
       return value.error;
 
     // Default Javascript Error
@@ -15,8 +18,13 @@ module.exports = function stringifyError(value) {
 		if (typeof value.message === 'string') {
 			return value.message;
 		}
+
+    // An String Object
+    else if (value instanceof String)
+      return value.valueOf();
+
     else {
-      return "An Error impossible to stringify has happened";
+      return NOT_STRINGIFABLE;
     }
 
 	}
@@ -27,11 +35,15 @@ module.exports = function stringifyError(value) {
 
 	// function
 	else if (typeof value === 'function') {
-		return value().toString();
+		var ret = value();
+    if (typeof ret === 'string')
+      return ret;
+    else
+      return NOT_STRINGIFABLE;
 	}
 
   else {
-    return "An error impossible to stringify has happened";
+    return NOT_STRINGIFABLE;
   }
 
 };
