@@ -7,8 +7,8 @@ module.exports = function stringifyError(value) {
   if (typeof value === 'object') {
 
     // Meteor Error or alike
-    if (typeof value.error === 'string')
-      return value.error;
+    if (typeof value.reason === 'string')
+      return value.reason;
 
     // Default Javascript Error
     if (value instanceof Error)

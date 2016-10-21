@@ -5,11 +5,12 @@ var NOT_STRINGIFABLE = "An error impossible to stringify has happened";
 
 test('Meteor errors', function(t) {
   var meteorError = {
-    error:"ERROR",
+    error:"404",
     message:"[ERROR]",
     errorType:"Meteor.Error",
+    reason:"ERROR",
   };
-  t.is(meteorError.error,stringifyError(meteorError));
+  t.is(meteorError.reason,stringifyError(meteorError));
 });
 
 test('Javascript errors', function(t) {
