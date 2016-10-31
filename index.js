@@ -9,6 +9,10 @@ module.exports = function stringifyError(value) {
     // Meteor Error or alike
     if (typeof value.reason === 'string')
       return value.reason;
+      
+    // Meteor Error or alike
+    if (typeof value.error === 'string')
+      return value.error;
 
     // Default Javascript Error
     if (value instanceof Error)
