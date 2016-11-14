@@ -1,7 +1,8 @@
 var test = require('ava');
 var stringifyError = require('./index');
 
-var NOT_STRINGIFABLE = "An error impossible to stringify has happened";
+var NOT_STRINGIFABLE = "stringifyError: An error impossible to stringify has happened";
+var EMPTY = "stringifyError:  Error without any description or information";
 
 test('Meteor errors', function(t) {
   var meteorError = {
@@ -41,4 +42,14 @@ test('Function not returning a string', function(t) {
 test('Array is not stringifable', function(t) {
   var error = [];
   t.is(NOT_STRINGIFABLE,stringifyError(error),'It should say that this error is not possible to stringify');
+});
+
+test('Empty object', function(t) {
+  var error = {};
+  t.is(EMPTY,stringifyError(error));
+});
+
+test('Empty string', function(t) {
+  var error = '';
+  t.is(EMPTY,stringifyError(error));
 });
